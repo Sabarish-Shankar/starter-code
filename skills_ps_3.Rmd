@@ -1,0 +1,96 @@
+---
+title: "30535 Skills Problem Set 3"
+author: "Sabarish Shankar"
+date: "25/04/2020"
+output:
+  html_document:
+    #number_sections: yes
+  pdf_document: default
+---
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(dplyr)
+```
+
+# Front matter
+This submission is my work alone and complies with the 30535 integrity policy.
+
+Add your initials to indicate your agreement: **Sabarish Shankar**
+
+Add your collaborators: **__**
+
+Late coins used this pset: 0. Late coins left: 4. 
+
+FEEDBACK from PS 2: Thank you for explaining your reasoning. I don't think net delay is as practical as arrival delay is alone - if a plane leaves 30 minutes late and arrives 30 minutes late, the effect of the delay is 30 minutes and not an hour.
+FEEDBACK: See solutions.
+
+# 2. R for Data Science Exercises
+## 2.1 Transformations: Grouped operations with mutate() (and filter()) (20
+points)
+
+
+1. 
+
+```{r}
+flights <- nycflights13::flights
+summary(flights)
+View(flights)
+flights%>% arrange(origin, dest, day, sched_dep_time)%>%
+  select(tailnum, origin, dest, day, sched_dep_time, dep_delay)%>%
+  group_by(origin)%>%
+  mutate(lag_delay = lag((sched_dep_time)))
+
+```
+
+2. 
+
+```{r}
+
+```
+
+3. 
+
+```{r}
+
+```
+
+## 2.2 Exploratory Data Analysis (25 points)
+
+### 2.2.1 EDA: Exploring variation
+
+
+```{r}
+
+```
+
+### 2.2.2 EDA: Navigating NAs
+
+```{r}
+
+```
+
+# 3 Exploratory Data Analysis: Covariation (35 points)
+
+1.
+
+```{r}
+
+```
+
+2. 
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
